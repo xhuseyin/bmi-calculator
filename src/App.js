@@ -1,10 +1,11 @@
 import './App.css';
+import BMI from './pages/BMI';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <>
+    <BMI/>
+    </>
   );
 }
 
