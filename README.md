@@ -1,1 +1,1 @@
-# React Body Mass Index Calculator
+# Body Mass Index Calculator (BMI) with ReactJS
