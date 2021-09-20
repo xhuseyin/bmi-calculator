@@ -1,4 +1,20 @@
 import { useState, useEffect } from 'react'
+import styled, { css } from 'styled-components'
+
+const Button = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0.5em 1em;
+  padding: 0.25em 1em;
+  cursor: pointer;
+
+  ${props => props.primary && css`
+    background: palevioletred;
+    color: white;    
+  `}
+`;
 
 const initialFormValues = { height:0, weight:0 }
 
@@ -27,7 +43,7 @@ export default function Form({addResult}) {
             <label>your weight(kg)</label>
             <input name="weight" value={form.weight} onChange={onChangeInput}/>
             <br/><br/>
-            <button>Calculate</button>
+            <Button>Calculate</Button>
         </form>
     )
 }
