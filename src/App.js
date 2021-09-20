@@ -6,20 +6,36 @@ import {
 } from "react-router-dom";
 import './App.css';
 import BMI from './pages/BMI';
-import CalculateBMI from './pages/CalculateBMI';
+import CalculateBMI from './pages/CalculateBMI'
+import styled, { css } from 'styled-components'
+
+const Button = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0.5em 1em;
+  padding: 0.25em 1em;
+  cursor: pointer;
+
+  ${props => props.primary && css`
+    background: palevioletred;
+    color: white;    
+  `}
+`;
+
+const Container = styled.div`
+  text-align: center;
+`
+
 
 
 function App() {
   return (
-    <Router>      
-        <ul>
-          <li>
-            <Link to="/">Calculate BMI</Link>
-          </li>
-          <li>
-            <Link to="/pages/BMI">What is the BMI?</Link>
-          </li>
-        </ul>
+    <Router>    
+      <Container>
+            <Link to="/"><Button>Calculate BMI</Button></Link>          
+            <Link to="/pages/BMI"><Button>What is the BMI?</Button></Link>         
         <hr />
         <Switch>
         <Route exact path="/">
@@ -29,6 +45,7 @@ function App() {
             <BMI/>
           </Route>          
         </Switch>
+        </Container>
     </Router>
   );
 }

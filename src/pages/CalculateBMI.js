@@ -1,5 +1,15 @@
 import { useState, useEffect } from 'react'
 import Form from '../components/Form'
+import styled from 'styled-components'
+
+const BiggerTitle = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+const BigTitle = styled(BiggerTitle)`
+  font-size: 1em;  
+`;
 
 export default function CalculateBMI() {
     const [result, setResult] = useState({ height: 0, weight: 0 })
@@ -9,7 +19,6 @@ export default function CalculateBMI() {
     useEffect(() => {
         if (result.weight > 0 || result.height > 0) {
             setTotal(((result.weight / result.height / result.height) * 10000).toFixed(1))
-               console.log('total:',total);
                 if(total < 18.5)
                     setCategory('Underweight')                    
                 else if(total >= 18.5 && total <= 24.9)
@@ -24,14 +33,12 @@ export default function CalculateBMI() {
 
     return (
         <>
-            <h1>Calculating BMI Using the Metric System</h1>
+            <BiggerTitle>Calculating BMI Using the Metric System</BiggerTitle>
             <Form addResult={setResult} />
-
-            <h2>Calculation: [{result.weight} (kg) / {result.height} (cm) / {result.height} (cm)] x 10,000 = {total}</h2>            
-            <h2>{category}</h2>
-
+            <BigTitle>Calculation: [{result.weight} (kg) / {result.height} (cm) / {result.height} (cm)] x 10,000 = {total}</BigTitle>            
+            <BigTitle>{category}</BigTitle>
             <hr/>
-            <h2>BMI Categories</h2>
+            <BigTitle>BMI Categories</BigTitle>
             <pre>
             {`
             Underweight =< 18.5
