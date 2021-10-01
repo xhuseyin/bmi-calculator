@@ -1,4 +1,4 @@
-# Body Mass Index Calculator (BMI) with ReactJS
+# Body Mass Index Calculator (BMI)
 
-This is a code repository that calculates Body Mass Index (BMI) with ReactJS
+This is a simple Body Mass Index Calculator (BMI) built to demonstrate using with ReactJS.
 
