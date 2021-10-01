@@ -25,7 +25,7 @@ export default function CalculateBMI() {
                     setCategory('Normal weight')                    
                 else if(total >= 25 && total <= 29.9)
                     setCategory('Overweight')                    
-                else if(total >= 30)
+                else
                     setCategory('Obesity')                               
         }
 
